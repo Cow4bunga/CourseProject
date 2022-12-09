@@ -17,7 +17,7 @@ string parse(string input) {
         input.erase(input.begin(), end);
 
         int num = stoi(tmp, nullptr, 10);
-        output.append(to_string(num + 2) + " ");
+        output.append(to_string(num * 2) + " ");
     }
     return output;
 }
@@ -78,7 +78,7 @@ int main() {
 
     ConnectNamedPipe(pipe4, nullptr);
 
-    if (!WriteFile(pipe4, input.c_str(), strlen(buffer),
+    if (!WriteFile(pipe4, input.c_str(), 80,
         nullptr, nullptr)) {
         cout << "M: writing failed!\n";
     }
@@ -86,6 +86,6 @@ int main() {
     CloseHandle(pipe3);
     CloseHandle(pipe4);
 
-    system("pause");
+    //system("pause");
     return 0;
 }

@@ -49,6 +49,8 @@ int main() {
     cout << "A got: " << str << "\n";
     string input = parse(str);
     cout << "A sent: " << input << "\n";
+    cout << str.length() << endl;
+    cout << input.length() << endl;
 
 
     HANDLE pipe3 = CreateNamedPipe(
@@ -71,6 +73,6 @@ int main() {
     CloseHandle(pipe2);
     CloseHandle(pipe3);
 
-    system("pause");
+    //system("pause");
     return 0;
 }

@@ -40,9 +40,9 @@ int main() {
     }
     ConnectNamedPipe(pipe1, nullptr);
 
-    cout << "Main sent: 1 2 3 4 5 6 7\n";
-
-    const char* data = "1 2 3 4 5 6 7 ";
+    const char* data = "1 1 1 1 1 1 7 ";
+    string str1 = data;
+    cout << "Main sent: " << str1 << endl;
     DWORD numBytesWritten = 0;
     if (!WriteFile(pipe1, data, strlen(data),
         &numBytesWritten, nullptr)) {
@@ -103,6 +103,6 @@ int main() {
     cout << "\nMain got: " << res << "\n";
 
     CloseHandle(pipe5);
-    system("pause");
+    //system("pause");
     return 0;
 }

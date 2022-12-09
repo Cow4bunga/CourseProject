@@ -72,6 +72,6 @@ int main() {
     CloseHandle(pipe4);
     CloseHandle(pipe5);
 
-    system("pause");
+    //system("pause");
     return 0;
 }

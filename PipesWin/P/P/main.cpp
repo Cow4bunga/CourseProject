@@ -15,7 +15,7 @@ string parse(string input) {
         input.erase(input.begin(), end);
 
         int num = stoi(tmp, nullptr, 10);
-        output.append(to_string(num * num * num) + " ");
+        output.append(to_string(num +3) + " ");
     }
     return output;
 }
@@ -63,6 +63,8 @@ int main() {
     cout << "P got: " << str1 << "\n";
     string input = parse(str);
     cout << "P sent: " << input << "\n";
+    cout << str.length() << endl;
+    cout << input.length() << endl;
 
     HANDLE pipe2 = CreateNamedPipe(
         "\\\\.\\pipe\\$Pipe2$", PIPE_ACCESS_OUTBOUND, PIPE_TYPE_BYTE,
@@ -84,6 +86,6 @@ int main() {
     CloseHandle(pipe1);
     CloseHandle(pipe2);
 
-    system("pause");
+    //system("pause");
     return 0;
 }
